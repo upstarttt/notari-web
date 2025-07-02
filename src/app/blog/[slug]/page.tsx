@@ -12,7 +12,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
+export default async function BlogPostPage({ params }) {
   const BLOG_DIR = path.join(process.cwd(), 'src/content/blog');
   const filePath = path.join(BLOG_DIR, `${params.slug}.mdx`);
   const fileContent = fs.readFileSync(filePath, 'utf-8');
