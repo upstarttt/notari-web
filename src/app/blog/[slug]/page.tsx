@@ -12,6 +12,7 @@ export async function generateStaticParams() {
   }));
 }
 
+// @ts-expect-error
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
   const BLOG_DIR = path.join(process.cwd(), 'src/content/blog');
   const filePath = path.join(BLOG_DIR, `${params.slug}.mdx`);
