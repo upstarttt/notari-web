@@ -12,10 +12,10 @@ export async function generateStaticParams() {
   }));
 }
 
-// @ts-expect-error
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const BLOG_DIR = path.join(process.cwd(), 'src/content/blog');
-  const filePath = path.join(BLOG_DIR, `${params.slug}.mdx`);
+  const filePath = path.join(BLOG_DIR, `${slug}.mdx`);
   const fileContent = fs.readFileSync(filePath, 'utf-8');
   const { content, data } = matter(fileContent);
 
