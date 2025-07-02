@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 import { useAnimation, useInView } from "framer-motion";
+import Link from "next/link";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -262,7 +263,7 @@ export default function Home() {
         <div className="max-w-3xl mx-auto flex flex-col items-center text-center">
           <h2 className="text-3xl font-bold text-blue-700 mb-4">¿Quieres estar al día en temas legales y tecnología notarial?</h2>
           <p className="text-gray-700 mb-6">Visita nuestro blog para leer artículos profesionales, análisis de reformas y tendencias del sector.</p>
-          <a href="/blog" className="px-8 py-3 rounded-full bg-blue-600 text-white font-semibold text-lg shadow hover:bg-blue-700 transition">Ir al blog</a>
+          <Link href="/blog" className="px-8 py-3 rounded-full bg-blue-600 text-white font-semibold text-lg shadow hover:bg-blue-700 transition">Ir al blog</Link>
         </div>
       </section>
 

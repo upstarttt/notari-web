@@ -1,5 +1,6 @@
 'use client';
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -52,7 +53,7 @@ export default function Contact() {
       </motion.div>
       <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="max-w-md w-full bg-blue-50 rounded-2xl p-6 shadow text-center">
         <h2 className="text-xl font-bold text-blue-700 mb-2">¿Necesitas ayuda rápida?</h2>
-        <p className="text-gray-700">Consulta nuestra sección de <a href="/" className="text-blue-600 underline">Preguntas Frecuentes</a> o escríbenos y te responderemos lo antes posible.</p>
+        <p className="text-gray-700">Consulta nuestra sección de <Link href="/" className="text-blue-600 underline">Preguntas Frecuentes</Link> o escríbenos y te responderemos lo antes posible.</p>
       </motion.div>
     </main>
   );
